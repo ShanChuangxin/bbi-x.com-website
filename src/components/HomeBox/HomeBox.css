@@ -1,0 +1,148 @@
+.h--box {
+    position: relative;
+    flex: 1;
+    height: 500px;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.h--box:nth-child(2) {
+    background: #111;
+}
+
+.h--box h2 {
+    position: relative; z-index: 2;
+    margin: 0; padding: 30px;
+    font-size: 40px; font-weight: normal; text-align: center;
+}
+
+.wrapper.exit-active .h--box {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+@media all and (max-width: 760px) {
+
+    .h--box {
+        height: 400px;
+    }
+
+    .h--box h2 {
+        padding: 30px 0;
+        font-size: 26px;
+    }
+
+}
+
+
+
+
+
+.h--box-overlay {
+    position: absolute; z-index: 0;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+}
+
+.h--box-overlay.exit {
+    z-index: 1;
+}
+
+.h--box-overlay.exit-active {
+    z-index: 1;
+    transform: translateY(-100%);
+    transition-duration: 0.7s; transition-delay: 0.6s;
+}
+
+.h--box-overlay.enter {
+    z-index: 0;
+}
+
+.h--box-overlay.enter-active {
+    z-index: 0;
+}
+
+
+
+
+
+
+
+.h--box-items {
+    position: absolute; z-index: 2;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    perspective: 1000px;
+}
+
+.h--box-item {
+    position: absolute;
+    top: 50%; left: 50%;
+    padding: 25px 45px;
+    border: solid 2px white;
+    font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.2em; text-align: center;
+    transform: translate(-50%, -50%) rotateX(0deg);
+    transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+    /*backface-visibility: hidden;*/
+    opacity: 1;
+}
+
+.h--box-item.exit-active {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotateX(180deg);
+    transition-duration: 0.8s;
+}
+
+.h--box-item.enter {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotateX(-180deg);
+}
+
+.h--box-item.enter-active {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotateX(0deg);
+    transition-duration: 0.8s; transition-delay: 0.7s;
+}
+
+@media all and (max-width: 760px) {
+
+    .h--box-item {
+        padding: 20px 40px;
+        font-size: 20px;
+    }
+
+}
+
+
+
+
+
+
+
+.h--box-link {
+    position: absolute; z-index: 2;
+    padding: 0 10px 15px;
+    bottom: 50px; left: 50%;
+    border-bottom: solid 1px white;
+    color: white; font-weight: bold; text-transform: uppercase; letter-spacing: 0.2em;
+    transform: translateX(-50%);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.h--box-link:hover {
+    padding: 0 20px 15px;
+    opacity: 1;
+    transition-duration: 0.5s; transition-timing-function: ease-in-out;
+}
+
+@media all and (max-width: 760px) {
+
+    .h--box-link {
+        bottom: 40px;
+        font-size: 12px;
+    }
+
+}

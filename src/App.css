@@ -1,0 +1,126 @@
+#dev-tools {
+    position: fixed;
+    bottom: 20px; left: calc(50% - 100px);
+    padding: 15px;
+    width: 170px;
+    background: black;
+    color: white; font-size: 11px;
+}
+
+
+
+
+
+
+.work-tile {
+    display: block; float: left; position: relative;
+    margin: 0;
+    width:calc(100% / 3); height: 300px;
+    background: #ccc;
+    overflow: hidden;
+    pointer-events: all;
+}
+
+.work-tile:nth-child(3n) {
+    margin-right: 0;
+}
+
+.work-tile-inner {
+    position: absolute; z-index: 1;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.work-tile img {
+    position: absolute; z-index: 0;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.work-tile-tag {
+    position: absolute; z-index: 100;
+    bottom: 0; left: 0;
+    padding: 15px 20px 17px 15px;
+    background: #181818;
+    /*border-bottom: solid 1px #eee;*/
+    color: white; font-size: 14px;
+}
+
+.work-tile-client {
+    margin-top: 5px;
+    font-size: 9px; font-weight: bold; text-transform: uppercase;
+}
+
+@media all and (max-width:760px) {
+
+    .work-tile:nth-child(n) {
+        float: none;
+        margin: 0;
+        width: auto;
+    }
+
+}
+
+
+
+.wrapper.enter .work-tile {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.wrapper.enter-active .work-tile {
+    transform: translateY(0);
+    opacity: 1;
+    transition-duration: 0.6s; transition-delay: 2.4s;
+}
+
+.wrapper.enter-active .work-tile:nth-child(1) {transition-delay:1.5s}
+.wrapper.enter-active .work-tile:nth-child(2) {transition-delay:1.6s}
+.wrapper.enter-active .work-tile:nth-child(3) {transition-delay:1.7s}
+.wrapper.enter-active .work-tile:nth-child(4) {transition-delay:1.8s}
+.wrapper.enter-active .work-tile:nth-child(5) {transition-delay:1.9s}
+.wrapper.enter-active .work-tile:nth-child(6) {transition-delay:2.0s}
+.wrapper.enter-active .work-tile:nth-child(7) {transition-delay:2.1s}
+.wrapper.enter-active .work-tile:nth-child(8) {transition-delay:2.2s}
+.wrapper.enter-active .work-tile:nth-child(9) {transition-delay:2.3s}
+
+.wrapper.exit .work-tile:not(.expand) {
+    opacity: 1;
+}
+
+.wrapper.exit-active .work-tile:not(.expand) {
+    opacity: 0;
+    transition-duration: 0.6s; transition-delay: 0.9s;
+}
+
+.wrapper.exit-active .work-tile:not(.expand):nth-child(1) {transition-delay:0s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(2) {transition-delay:0.1s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(3) {transition-delay:0.2s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(4) {transition-delay:0.3s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(5) {transition-delay:0.4s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(6) {transition-delay:0.5s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(7) {transition-delay:0.6s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(8) {transition-delay:0.7s}
+.wrapper.exit-active .work-tile:not(.expand):nth-child(9) {transition-delay:0.8s}
+
+
+.wrapper.exit-active .work-tile-tag {
+    transform: translateX(-100%) translateZ(0);
+    transition-duration: 0.75s; transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+}
+
+
+
+
+
+.work-tile.expand .work-tile-inner {
+    position: fixed; z-index: 1000;
+    transform: translateZ(0);
+}
+
+.work-tile.expand-active .work-tile-inner {
+    transform: translateZ(0);
+    transition-duration: 1.2s; transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+}

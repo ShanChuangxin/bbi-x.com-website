@@ -1,0 +1,47 @@
+#w--help-bar {
+    margin: 80px 0 0;
+    overflow: hidden;
+}
+
+#w--help {
+    padding: 20px 0 30px;
+    background: #151515;
+    color: #aaa; font-size: 10px; font-weight: bold; text-transform: uppercase; text-align: center; letter-spacing: 0.2em;
+}
+
+.wrapper.enter #w--help {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.wrapper.enter-active #w--help {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 1.0s; transition-delay: 1.5s; transition-timing-function: ease-in-out;
+}
+
+.wrapper.exit #w--help {
+    opacity: 1;
+}
+
+.wrapper.exit-active #w--help {
+    opacity: 0;
+    transform: translateY(50px);
+    transition-duration: 1.0s; transition-timing-function: ease-in-out;
+}
+
+
+
+
+
+#w--projects {
+    padding: 0;
+}
+
+@media all and (max-width: 760px) {
+
+    #w--projects {
+        padding: 0;
+    }
+
+}

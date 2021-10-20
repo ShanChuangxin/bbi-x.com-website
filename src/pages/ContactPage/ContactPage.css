@@ -1,0 +1,116 @@
+#inquiry-form-wrapper {
+    height: 100vh;
+    background: linear-gradient(135deg, #3469B8, #B8542D);
+    color: white;
+}
+
+.exit #inquiry-form-wrapper {
+    opacity: 1;
+}
+
+.wrapper.exit-active #inquiry-form-wrapper {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.wrapper.enter #inquiry-form-wrapper {
+    opacity: 0;
+    transition-duration: 0s;
+}
+
+.wrapper.enter-active #inquiry-form-wrapper {
+    opacity: 1;
+    transition-duration: 1s; transition-delay: 1.5s;
+}
+
+
+
+
+
+
+#inquiry-form-content {
+    margin: 0px auto; padding-top: 300px;
+    width: 500px;
+}
+
+#inquiry-form-content h1 {
+    margin-bottom: 30px;
+    font-size: 50px; font-weight: 300; text-transform: uppercase;
+}
+
+#inquiry-form-text {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#inquiry-form-contact {
+    font-size: 30px; font-weight: bold;
+}
+
+.wrapper.exit #inquiry-form-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.wrapper.exit-active #inquiry-form-content {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition-duration: 1s; transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+}
+
+.wrapper.enter #inquiry-form-content {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.wrapper.enter-active #inquiry-form-content {
+    opacity: 1;
+    transform: translateX(0);
+    transition-duration: 1s; transition-delay: 1.5s; transition-timing-function: cubic-bezier(0.9,0,0.1,1);
+}
+
+@media all and (max-width: 760px) {
+
+    #inquiry-form-content {
+        padding: 200px 30px 100px;
+        width: auto;
+    }
+
+    #inquiry-form-content h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+
+    #inquiry-form-text {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    #inquiry-form-contact {
+        font-size: 18px;
+    }
+
+}
+
+
+
+
+
+form#inquiry {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+form#inquiry input[type="text"] {
+    display: block;
+    margin-bottom: 10px; padding: 10px;
+    border: solid 1px #fff;
+}
+
+form#inquiry input[type="submit"] {
+    display: block;
+    margin-bottom: 10px; padding: 10px;
+    border: solid 1px #fff;
+    -webkit-appearance: none;
+}

@@ -1,0 +1,114 @@
+#team-list {
+    padding: 100px 20px 20px 20px;
+    background: #111;
+}
+
+.wrapper.enter #team-list {
+    background: #000;
+}
+
+.wrapper.enter-active #team-list {
+    background: #111;
+    transition-duration: 1.5s; transition-delay: 1.5s;
+}
+
+.wrapper.exit #team-list {
+    background: #111;
+}
+
+.wrapper.exit-active #team-list {
+    background: #000;
+    transition-duration: 1.5s;
+}
+
+
+
+
+.team-member {
+    position: relative; float: left;
+    margin: 0 5px 20px 0;
+    width: calc((100% - 20px) / 5);
+    color: white; font-size: 14px;
+}
+
+.team-member:nth-child(5n) {
+    margin-right: 0px;
+}
+
+.team-member-cover {
+    position: relative;
+    margin-bottom: 10px; padding-top: 150%;
+    background: #555;
+}
+
+.team-member-cover img {
+    position: absolute;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.team-member-name {
+    margin-bottom: 3px;
+}
+
+.team-member-title {
+    font-size: 10px; font-weight: bold; text-transform: uppercase;
+}
+
+.wrapper.exit .team-member {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.wrapper.exit-active .team-member {
+    opacity: 0;
+    transition-duration: 1.05s; transition-delay: 0.45s;
+}
+
+.wrapper.exit-active .team-member:nth-child(1) {transition-delay: 0s}
+.wrapper.exit-active .team-member:nth-child(2) {transition-delay: 0.05s}
+.wrapper.exit-active .team-member:nth-child(3) {transition-delay: 0.1s}
+.wrapper.exit-active .team-member:nth-child(4) {transition-delay: 0.15s}
+.wrapper.exit-active .team-member:nth-child(5) {transition-delay: 0.2s}
+.wrapper.exit-active .team-member:nth-child(6) {transition-delay: 0.25s}
+.wrapper.exit-active .team-member:nth-child(7) {transition-delay: 0.3s}
+.wrapper.exit-active .team-member:nth-child(8) {transition-delay: 0.35s}
+.wrapper.exit-active .team-member:nth-child(9) {transition-delay: 0.4s}
+
+.wrapper.enter .team-member {
+    opacity: 0;
+}
+
+.wrapper.enter-active .team-member {
+    opacity: 1;
+    transition-duration: 1.05s; transition-delay: 1.95s;
+}
+
+.wrapper.enter-active .team-member:nth-child(1) {transition-delay: 1.5s}
+.wrapper.enter-active .team-member:nth-child(2) {transition-delay: 1.55s}
+.wrapper.enter-active .team-member:nth-child(3) {transition-delay: 1.6s}
+.wrapper.enter-active .team-member:nth-child(4) {transition-delay: 1.65s}
+.wrapper.enter-active .team-member:nth-child(5) {transition-delay: 1.7s}
+.wrapper.enter-active .team-member:nth-child(6) {transition-delay: 1.75s}
+.wrapper.enter-active .team-member:nth-child(7) {transition-delay: 1.8s}
+.wrapper.enter-active .team-member:nth-child(8) {transition-delay: 1.85s}
+.wrapper.enter-active .team-member:nth-child(9) {transition-delay: 1.9s}
+
+
+@media all and (max-width: 760px) {
+
+    .team-member, .team-member:nth-child(5n) {
+        margin: 0 5px 20px 0;
+        width: calc((100% - 5px) / 2);
+    }
+
+    .team-member:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .team-member-title {
+        font-size: 10px;
+    }
+
+}
